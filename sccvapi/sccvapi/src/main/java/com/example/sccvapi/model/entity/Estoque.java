@@ -1,25 +1,31 @@
 package com.example.sccvapi.model.entity;
 
-
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.MappedSuperclass;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
+@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@MappedSuperclass
-public abstract class Pessoa {
+public class Estoque {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nome;
-    private String email;
+    private int quantidade;
+    private int quantidadeMaxima;
+    private int pontoRessuprimento;
+    private String nomeVacina;
 
 
 }
+
+

@@ -15,4 +15,6 @@ public class PessoaFisica extends Pessoa {
 
     private Date dataNascimento;
     private String cpf;
+    private Telefone telefone;
+    private Endereco endereco;
 }
