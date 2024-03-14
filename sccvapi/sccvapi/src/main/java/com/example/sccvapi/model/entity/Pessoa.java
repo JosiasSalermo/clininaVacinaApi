@@ -6,10 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 
 @Data
 @NoArgsConstructor
@@ -22,6 +19,10 @@ public abstract class Pessoa {
 
     private String nome;
     private String email;
+    @ManyToOne
+    private Telefone telefone;
+    @ManyToOne
+    private Endereco endereco;
 
 
 }

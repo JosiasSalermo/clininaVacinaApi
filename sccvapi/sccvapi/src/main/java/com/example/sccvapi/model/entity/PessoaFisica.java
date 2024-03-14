@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import java.util.Date;
 
 @Entity
@@ -16,6 +17,5 @@ public class PessoaFisica extends Pessoa {
 
     private Date dataNascimento;
     private String cpf;
-    private Telefone telefone;
-    private Endereco endereco;
+
 }
