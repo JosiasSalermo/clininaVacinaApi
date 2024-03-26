@@ -22,6 +22,4 @@ public class CondicaoEspecial {
 
     private String nomeCondicao;
     private String descricao;
-
 }
-
