@@ -15,6 +15,7 @@ import java.util.Date;
 public class VacinaDTO {
 
     private Long id;
+    private Long idFabricante;
     private String nomeVacina;
     private String tipoVacina;
     private String numeroLote;
@@ -27,7 +28,6 @@ public class VacinaDTO {
     public static VacinaDTO create(Vacina vacina){
         ModelMapper modelMapper = new ModelMapper();
         VacinaDTO dto = modelMapper.map(vacina, VacinaDTO.class);
-        dto.nomeFabricante = vacina.getNomeFabricante();
         return dto;
     }
 }

@@ -26,7 +26,7 @@ public class Vacina {
     private String indicacao;
     private String contraIndicacao;
     @ManyToOne
-    private Fabricante nomeFabricante;
+    private Fabricante fabricante;
 
 
 }
