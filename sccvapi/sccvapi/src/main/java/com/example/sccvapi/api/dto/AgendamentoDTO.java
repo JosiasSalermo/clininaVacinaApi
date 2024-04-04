@@ -13,6 +13,7 @@ import java.util.Date;
 @AllArgsConstructor
 public class AgendamentoDTO {
     private Long id;
+    private Long idVacina;
     private Date dataAgendamento;
     private Date horarioAgendamento;
 

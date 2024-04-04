@@ -12,7 +12,6 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CargoDTO {
-
     private Long id;
     private String descricao;
     private String cargo;
