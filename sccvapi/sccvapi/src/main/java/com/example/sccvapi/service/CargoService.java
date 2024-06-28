@@ -20,7 +20,7 @@ public class CargoService {
         return repository.findAll();
     }
 
-    public Optional<Cargo> getCargoById(Long id){
+    public Optional<Cargo> getCargoById(Long id) {
         return repository.findById(id);
     }
 

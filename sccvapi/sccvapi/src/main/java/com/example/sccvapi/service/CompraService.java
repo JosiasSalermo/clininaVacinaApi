@@ -10,17 +10,17 @@ import java.util.Optional;
 @Service
 public class CompraService {
 
-   private CompraRepository repository;
+    private CompraRepository repository;
 
-        public CompraService(CompraRepository repository){
+    public CompraService(CompraRepository repository){
             this.repository = repository;
         }
 
-        public List<Compra> getCompras(){
+    public List<Compra> getCompras(){
             return repository.findAll();
         }
 
-        public Optional<Compra> getCompraById(Long id){
+    public Optional<Compra> getCompraById(Long id){
             return repository.findById(id);
         }
 }

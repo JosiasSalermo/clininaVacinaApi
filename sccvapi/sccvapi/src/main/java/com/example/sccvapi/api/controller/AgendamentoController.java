@@ -1,17 +1,19 @@
 package com.example.sccvapi.api.controller;
 
-import com.example.sccvapi.api.dto.AgendamentoDTO;
-import com.example.sccvapi.model.entity.Agendamento;
-import com.example.sccvapi.model.entity.Vacina;
-import com.example.sccvapi.service.AgendamentoService;
-import com.example.sccvapi.service.VacinaService;
+import com.example.sccvapi.api.dto.*;
+import com.example.sccvapi.model.entity.*;
+import com.example.sccvapi.service.*;
+
+import com.example.sccvapi.exception.RegraNegocioException;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/agendamento")
@@ -21,6 +23,21 @@ public class AgendamentoController {
 
     private final AgendamentoService service;
     private final VacinaService vacinaService;
+
+    @GetMapping()
+    public ResponseEntity get(){
+        List<Agendamento> agendamentos = service.getAgendamentos();
+        return ResponseEntity.ok(agendamentos.stream().map(AgendamentoDTO::create).collect(Collectors.toList()));
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity get(@PathVariable("id") Long id){
+        Optional<Agendamento> agendamento = service.getAgendamentoById(id);
+        if(!agendamento.isPresent()){
+            return new ResponseEntity("Agendamento não encontrado", HttpStatus.NOT_FOUND);
+        }
+        return ResponseEntity.ok(agendamento.map(AgendamentoDTO::create));
+    }
 
 
 

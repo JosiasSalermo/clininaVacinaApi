@@ -16,7 +16,7 @@ public class CondicaoEspecialService {
         this.repository = repository;
     }
 
-   public List<CondicaoEspecial> getCondicoesEspeciais(){
+    public List<CondicaoEspecial> getCondicoesEspeciais(){
         return repository.findAll();
     }
 

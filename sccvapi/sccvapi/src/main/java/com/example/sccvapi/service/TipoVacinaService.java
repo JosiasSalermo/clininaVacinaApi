@@ -16,7 +16,7 @@ public class TipoVacinaService {
         this.repository = repository;
     }
 
-    public List<com.example.sccvapi.model.entity.TipoVacina> getTipoVacinas(){
+    public List<TipoVacina> getTipoVacinas(){
         return repository.findAll();
     }
 

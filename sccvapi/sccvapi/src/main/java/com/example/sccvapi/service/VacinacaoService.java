@@ -23,7 +23,7 @@ public class VacinacaoService {
         return repository.findAll();
     }
 
-   public Optional<Vacinacao> getVacinacaoById(Long id){
+    public Optional<Vacinacao> getVacinacaoById(Long id){
         return repository.findById(id);
     }
 
