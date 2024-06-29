@@ -1,5 +1,6 @@
 package com.example.sccvapi.api.dto;
 
+import com.example.sccvapi.model.entity.Compra;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,7 +16,7 @@ public class CompraDTO {
     private Date dataCompra;
     private double valor;
 
-    public static CompraDTO create(CompraDTO compra) {
+    public static CompraDTO create(Compra compra) {
         ModelMapper modelMapper = new ModelMapper();
         CompraDTO dto = modelMapper.map(compra, CompraDTO.class);
         return dto;
