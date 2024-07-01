@@ -1,5 +1,6 @@
 package com.example.sccvapi.api.dto;
 
+import com.example.sccvapi.model.entity.Estoque;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,7 +18,7 @@ public class EstoqueDTO {
     private String nomeVacina;
 
 
-    public static EstoqueDTO create(EstoqueDTO estoque) {
+    public static EstoqueDTO create(Estoque estoque) {
         ModelMapper modelMapper = new ModelMapper();
         EstoqueDTO dto = modelMapper.map(estoque, EstoqueDTO.class);
         return dto;
