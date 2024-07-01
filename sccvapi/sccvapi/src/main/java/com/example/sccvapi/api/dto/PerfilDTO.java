@@ -1,5 +1,6 @@
 package com.example.sccvapi.api.dto;
 
+import com.example.sccvapi.model.entity.Perfil;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,7 +15,7 @@ public class PerfilDTO {
     private String perfil;
     private String acessos;
 
-    public static PerfilDTO create(PerfilDTO perfil){
+    public static PerfilDTO create(Perfil perfil){
         ModelMapper modelMapper = new ModelMapper();
         PerfilDTO dto = modelMapper.map(perfil, PerfilDTO.class);
         return dto;
